@@ -155,7 +155,7 @@ console.groupCollapsed("VERY-EASY");
   console.groupEnd();
 
   console.groupCollapsed(
-    "10. Convert Hours into Seconds - https://edabit.com/challenge/6AnQqiEjkJdZrWhPS"
+    "10. Maximum Edge of a Triangle - https://edabit.com/challenge/nhXofMMyrowMyr9Nv"
   );
   {
     function nextEdge(side1, side2) {
@@ -167,6 +167,79 @@ console.groupCollapsed("VERY-EASY");
     Test.assertEquals(nextEdge(7, 9), 15);
     Test.assertEquals(nextEdge(10, 4), 13);
     Test.assertEquals(nextEdge(7, 2), 8);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "11. Return the Remainder from Two Numbers - https://edabit.com/challenge/Q2j5FTFtsk7PdzrQk"
+  );
+  {
+    function remainder(x, y) {
+      return x % y;
+    }
+
+    Test.assertEquals(remainder(7, 2), 1);
+    Test.assertEquals(remainder(3, 4), 3);
+    Test.assertEquals(remainder(-9, 45), -9);
+    Test.assertEquals(remainder(5, 5), 0);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "12. Find the Perimeter of a Rectangle - https://edabit.com/challenge/XnJ24rWW7iJkNrtsh"
+  );
+  {
+    function findPerimeter(length, width) {
+      return (length + width) * 2;
+    }
+
+    Test.assertEquals(findPerimeter(6, 7), 26);
+    Test.assertEquals(findPerimeter(20, 10), 60);
+    Test.assertEquals(findPerimeter(2, 9), 22);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "13. Return Something to Me! - https://edabit.com/challenge/MvZK536X7fyrWH8Qc"
+  );
+  {
+    function giveMeSomething(a) {
+      return `something ${a}`;
+    }
+
+    Test.assertEquals(giveMeSomething("a"), "something a");
+    Test.assertEquals(giveMeSomething("is cooking"), "something is cooking");
+    Test.assertEquals(giveMeSomething(" is cooking"), "something  is cooking");
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "14. Correct the Mistakes - https://edabit.com/challenge/ks3vMrqdnW3CQ3F4i"
+  );
+  {
+    function squared(b) {
+      return b * b;
+    }
+
+    Test.assertEquals(squared(10), 100, "Expected 100");
+    Test.assertEquals(squared(69), 4761, "Expected 4761");
+    Test.assertEquals(squared(666), 443556, "Expected 443556");
+    Test.assertEquals(squared(-21), 441, "Expected 441");
+    Test.assertEquals(squared(21), 441, "Expected 441");
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "15. Is the Number Less than or Equal to Zero? - https://edabit.com/challenge/PTiLYyb4A69KZtBCg"
+  );
+  {
+    function lessThanOrEqualToZero(num) {
+      return num <= 0 ? true : false;
+    }
+
+    Test.assertEquals(lessThanOrEqualToZero(5), false);
+    Test.assertEquals(lessThanOrEqualToZero(0), true);
+    Test.assertEquals(lessThanOrEqualToZero(-5), true);
   }
   console.groupEnd();
 }
