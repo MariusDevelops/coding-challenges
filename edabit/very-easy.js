@@ -242,5 +242,105 @@ console.groupCollapsed("VERY-EASY");
     Test.assertEquals(lessThanOrEqualToZero(-5), true);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "16. Sum of Polygon Angles - https://edabit.com/challenge/fBJyQSe5Jmbm9hPAG"
+  );
+  {
+    function sumPolygon(n) {
+      return (n - 2) * 180;
+    }
+
+    Test.assertEquals(sumPolygon(3), 180);
+    Test.assertEquals(sumPolygon(4), 360);
+    Test.assertEquals(sumPolygon(5), 540);
+    Test.assertEquals(sumPolygon(6), 720);
+    Test.assertEquals(sumPolygon(7), 900);
+    Test.assertEquals(sumPolygon(8), 1080);
+    Test.assertEquals(sumPolygon(9), 1260);
+    Test.assertEquals(sumPolygon(10), 1440);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "17. Basketball Points - https://edabit.com/challenge/Y46Xp2pcvTB77bmdD"
+  );
+  {
+    function points(twoPointers, threePointers) {
+      return twoPointers * 2 + threePointers * 3;
+    }
+
+    Test.assertEquals(points(1, 1), 5);
+    Test.assertEquals(points(1, 2), 8);
+    Test.assertEquals(points(2, 1), 7);
+    Test.assertEquals(points(2, 2), 10);
+    Test.assertEquals(points(69, 420), 1398);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "18. Basic Variable Assignment - https://edabit.com/challenge/ZNwHGgHvsdnYwJ5WK"
+  );
+  {
+    function nameString(name) {
+      var b = "Edabit";
+      var result = name + b;
+      return result;
+    }
+
+    Test.assertEquals(nameString("Mubashir"), "MubashirEdabit");
+    Test.assertEquals(nameString("Matt"), "MattEdabit");
+    Test.assertEquals(nameString("javaScript"), "javaScriptEdabit");
+    Test.assertEquals(nameString("Airforce"), "AirforceEdabit");
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "19. Less Than 100? - https://edabit.com/challenge/9MjEpkL7yAjAqiH58"
+  );
+  {
+    function lessThan100(a, b) {
+      return a + b < 100 ? true : false;
+    }
+
+    Test.assertEquals(lessThan100(5, 57), true);
+    Test.assertEquals(lessThan100(77, 30), false);
+    Test.assertEquals(lessThan100(0, 59), true);
+    Test.assertEquals(lessThan100(78, 35), false);
+    Test.assertEquals(lessThan100(63, 11), true);
+    Test.assertEquals(lessThan100(37, 99), false);
+    Test.assertEquals(lessThan100(52, 11), true);
+    Test.assertEquals(lessThan100(82, 95), false);
+    Test.assertEquals(lessThan100(17, 44), true);
+    Test.assertEquals(lessThan100(74, 53), false);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "20. Buggy Code (Part 5) - https://edabit.com/challenge/4iCsexZgmDEMMxj46"
+  );
+  {
+    function printArray(number) {
+      var newArray = [];
+
+      for (var i = 1; i <= number; i++) {
+        newArray.push(i);
+      }
+
+      return newArray;
+    }
+
+    Test.assertEquals(printArray(1), [1]);
+    Test.assertEquals(printArray(2), [1, 2]);
+    Test.assertEquals(printArray(3), [1, 2, 3]);
+    Test.assertEquals(printArray(4), [1, 2, 3, 4]);
+    Test.assertEquals(printArray(5), [1, 2, 3, 4, 5]);
+    Test.assertEquals(printArray(6), [1, 2, 3, 4, 5, 6]);
+    Test.assertEquals(printArray(7), [1, 2, 3, 4, 5, 6, 7]);
+    Test.assertEquals(printArray(8), [1, 2, 3, 4, 5, 6, 7, 8]);
+    Test.assertEquals(printArray(9), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    Test.assertEquals(printArray(10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
