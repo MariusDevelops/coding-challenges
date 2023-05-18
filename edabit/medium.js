@@ -202,5 +202,35 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(f3(), "");
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "3. RegEx Exercise: An empty string - https://edabit.com/challenge/bAqxpvYmDuuvz4LQz"
+  );
+  {
+    const str = "";
+
+    function testExp(str) {
+      //   if (str.length === 0) {
+      //     console.log(true);
+      //   }
+
+      const regexp = /^$/;
+
+      if (str.match(regexp)) {
+        return true;
+      } else {
+        return false;
+      }
+
+      //   if (/^$/.test(str)) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+    }
+
+    Test.assertEquals(testExp(str), true);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
