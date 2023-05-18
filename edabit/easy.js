@@ -133,5 +133,112 @@ console.groupCollapsed("EASY");
     Test.assertEquals(minMax([0, 0, 0, 0]), [0, 0]);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "6. Is it Time for Milk and Cookies? - https://edabit.com/challenge/hPWnaSckJke5FXNEH"
+  );
+  {
+    function timeForMilkAndCookies(date) {
+      const month = date.getMonth();
+      const day = date.getDate();
+      return month === 11 && day === 24 ? true : false;
+    }
+
+    Test.assertEquals(timeForMilkAndCookies(new Date(2013, 11, 24)), true);
+    Test.assertEquals(timeForMilkAndCookies(new Date(3000, 11, 24)), true);
+    Test.assertEquals(timeForMilkAndCookies(new Date(2154, 11, 11)), false);
+    Test.assertEquals(timeForMilkAndCookies(new Date(2010, 11, 2)), false);
+    Test.assertEquals(timeForMilkAndCookies(new Date(1980, 9, 24)), false);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "7. Which Function Returns the Larger Number? - https://edabit.com/challenge/o7TwicAHWuMkjbDqQ"
+  );
+  {
+    function whichIsLarger(f, g) {
+      const firstNum = f();
+      const secondNum = g();
+
+      if (firstNum > secondNum) {
+        return "f";
+      } else if (firstNum < secondNum) {
+        return "g";
+      } else {
+        return "neither";
+      }
+    }
+
+    Test.assertEquals(
+      whichIsLarger(
+        () => 5,
+        () => 10
+      ),
+      "g"
+    );
+    Test.assertEquals(
+      whichIsLarger(
+        () => 10,
+        () => 5
+      ),
+      "f"
+    );
+    Test.assertEquals(
+      whichIsLarger(
+        () => 25,
+        () => 25
+      ),
+      "neither"
+    );
+    Test.assertEquals(
+      whichIsLarger(
+        () => -100,
+        () => -100
+      ),
+      "neither"
+    );
+    Test.assertEquals(
+      whichIsLarger(
+        () => -100,
+        () => 0
+      ),
+      "g"
+    );
+    Test.assertEquals(
+      whichIsLarger(
+        () => 505050,
+        () => 5050
+      ),
+      "f"
+    );
+    Test.assertEquals(
+      whichIsLarger(
+        () => 100,
+        () => 1000
+      ),
+      "g"
+    );
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "8. Convert a Number to Base-2 - https://edabit.com/challenge/3kcrnpHk7krNZdnKK"
+  );
+  {
+    function binary(decimal) {
+      const binary = decimal.toString(2);
+      return binary;
+    }
+
+    Test.assertEquals(binary(100), "1100100");
+    Test.assertEquals(binary(1), "1");
+    Test.assertEquals(binary(0), "0");
+    Test.assertEquals(binary(69), "1000101");
+    Test.assertEquals(binary(1023), "1111111111");
+    Test.assertEquals(binary(511), "111111111");
+    Test.assertEquals(binary(666), "1010011010");
+    Test.assertEquals(binary(123), "1111011");
+  }
+  console.groupEnd();
 }
 console.groupEnd();
