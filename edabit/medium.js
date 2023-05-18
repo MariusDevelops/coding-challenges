@@ -181,5 +181,26 @@ console.groupCollapsed("MEDIUM");
     );
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "2. A Redundant Function - https://edabit.com/challenge/hzxN9bAebBPNqdQto"
+  );
+  {
+    const f1 = redundant("apple");
+    const f2 = redundant("pear");
+    const f3 = redundant("");
+
+    function redundant(str) {
+      function result() {
+        return str;
+      }
+      return result;
+    }
+
+    Test.assertEquals(f1(), "apple");
+    Test.assertEquals(f2(), "pear");
+    Test.assertEquals(f3(), "");
+  }
+  console.groupEnd();
 }
 console.groupEnd();
