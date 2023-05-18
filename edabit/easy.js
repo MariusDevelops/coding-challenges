@@ -240,5 +240,74 @@ console.groupCollapsed("EASY");
     Test.assertEquals(binary(123), "1111011");
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "9. Check if One Array can be Nested in Another - https://edabit.com/challenge/Gpy2qSFnfhGJnWMMj"
+  );
+  {
+    function canNest(arr1, arr2) {
+      // find arr min and max numbers
+      const arr1Min = Math.min(...arr1);
+      const arr1Max = Math.max(...arr1);
+      const arr2Min = Math.min(...arr2);
+      const arr2Max = Math.max(...arr2);
+      // write if else and return
+      return arr1Min > arr2Min && arr1Max < arr2Max ? true : false;
+      // arr1's min is greater than arr2's min.
+      // arr1's max is less than arr2's max.
+    }
+
+    Test.assertEquals(canNest([1, 2, 3, 4], [0, 6]), true);
+    Test.assertEquals(canNest([3, 1], [4, 0]), true);
+    Test.assertEquals(canNest([9, 9, 8], [8, 9, 10]), false);
+    Test.assertEquals(canNest([9, 9, 8], [8, 9]), false);
+    Test.assertEquals(canNest([1, 2, 3, 4], [2, 3]), false);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "10. RegEx Exercise 1: Find the Time - https://edabit.com/challenge/QkuiL7XApt2RMQqTJ"
+  );
+  {
+    // pseudocode:
+    // problem: find time in a string
+    const str = "Breakfast at 09:00 in the room 123:456.";
+
+    function testExp(str) {
+      const regexp = /(\b[0-9][0-9]:[0-9][0-9]\b)/g;
+      // const regexp = /(\b\d{1,2}:\d{2}\b)/g;
+      return str.match(regexp);
+    }
+
+    Test.assertEquals(testExp(str), ["09:00"]);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "11. RegEx XIV: Group Ranges x|y - https://edabit.com/challenge/7KbZc8QvzqrJPaE6Q"
+  );
+  {
+    const str1 = "red flag blue flag";
+    const str2 = "yellow flag red flag blue flag green flag";
+    const str3 = "pink flag red flag black flag blue flag green flag red flag";
+    const str4 = "blue flag red flag red flag blue flag green flag red flag";
+
+    function testExp(str) {
+      const regexp = /(blue flag|red flag)/gi;
+      return str.match(regexp);
+    }
+
+    Test.assertEquals(testExp(str1), ["red flag", "blue flag"]);
+    Test.assertEquals(testExp(str2), ["red flag", "blue flag"]);
+    Test.assertEquals(testExp(str3), ["red flag", "blue flag", "red flag"]);
+    Test.assertEquals(testExp(str4), [
+      "blue flag",
+      "red flag",
+      "red flag",
+      "blue flag",
+      "red flag",
+    ]);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
