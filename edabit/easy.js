@@ -309,5 +309,108 @@ console.groupCollapsed("EASY");
     ]);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "12. Promises III: Native Promise, Introducing the Executor - https://edabit.com/challenge/8kTQqoWYQXRsKuYEf"
+  );
+  {
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("edabit string");
+      }, 1000);
+    });
+
+    // promise.then((result) => {
+    //   Test.assertEquals(typeof result, "string");
+    // });
+
+    promise.then((result) => {
+      console.groupCollapsed("<--- edabit easy 12th task");
+      {
+        console.log("Expected:", typeof result);
+        console.log("Actual:", "string");
+        Test.assertEquals(typeof result, "string");
+      }
+      console.groupEnd();
+    });
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "13. Number of Squares in an N * N Grid - https://edabit.com/challenge/RGQXN4TG2CQoBAReQ"
+  );
+  {
+    // function numberSquares(n) {
+    //   result = 0;
+    //   for (let i = 0; i <= n; i++) {
+    //     result = i ** 2 + result;
+    //   }
+    //   return result;
+    // }
+
+    function numberSquares(n) {
+      if (n === 0) {
+        return 0;
+      }
+
+      return n ** 2 + numberSquares(n - 1);
+    }
+
+    Test.assertEquals(numberSquares(0), 0);
+    Test.assertEquals(numberSquares(1), 1);
+    Test.assertEquals(numberSquares(2), 5);
+    Test.assertEquals(numberSquares(3), 14);
+    Test.assertEquals(numberSquares(10), 385);
+    Test.assertEquals(numberSquares(12), 650);
+    Test.assertEquals(numberSquares(5), 55);
+    Test.assertEquals(numberSquares(9), 285);
+    Test.assertEquals(numberSquares(11), 506);
+    Test.assertEquals(numberSquares(15), 1240);
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "14. Sum of Resistance in Series Circuits - https://edabit.com/challenge/JDkyQJqNfJNhvjmRW"
+  );
+  {
+    // function seriesResistance(arr) {
+    //   let sum = 0;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     sum += arr[i];
+    //   }
+
+    //   return sum <= 1 ? sum + " ohm" : sum + " ohms";
+    // }
+
+    function seriesResistance(arr) {
+      const sum = arr.reduce(
+        (previousValue, currentValue) => previousValue + currentValue,
+        0
+      );
+
+      let result = "";
+      if (sum <= 1) {
+        result = `${sum} ohm`;
+      } else {
+        result = `${sum} ohms`;
+      }
+
+      return result;
+    }
+
+    Test.assertEquals(seriesResistance([1, 5, 6, 3]), "15 ohms");
+    Test.assertEquals(seriesResistance([0.2, 0.3, 0.4]), "0.9 ohm");
+    Test.assertEquals(seriesResistance([10, 12, 1, 10]), "33 ohms");
+    Test.assertEquals(seriesResistance([10, 13, 3.8, 20, 10]), "56.8 ohms");
+    Test.assertEquals(seriesResistance([0.5, 0.5]), "1 ohm");
+    Test.assertEquals(seriesResistance([16, 30, 22.8, 4]), "72.8 ohms");
+    Test.assertEquals(seriesResistance([20, 15, 32.5, 2]), "69.5 ohms");
+    Test.assertEquals(seriesResistance([52, 22, 20, 30]), "124 ohms");
+    Test.assertEquals(
+      seriesResistance([10, 12, 32, 4.9, 5, 6, 71]),
+      "140.9 ohms"
+    );
+  }
+  console.groupEnd();
 }
 console.groupEnd();
