@@ -412,5 +412,109 @@ console.groupCollapsed("EASY");
     );
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "15. Largest Swap - https://edabit.com/challenge/hD3euqPHM82Cbr7R8"
+  );
+  {
+    function largestSwap(num) {
+      const reversedNum = num.toString().split("").reverse().join("");
+      if (num >= reversedNum) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    Test.assertEquals(largestSwap(27), false, "27 < 72, so not largest swap.");
+    Test.assertEquals(largestSwap(43), true, "43 > 34, so largest swap.");
+    Test.assertEquals(largestSwap(14), false, "14 < 41, so not largest swap.");
+    Test.assertEquals(largestSwap(53), true, "53 > 35, so largest swap.");
+    Test.assertEquals(
+      largestSwap(99),
+      true,
+      "Cannot do better, so largest swap."
+    );
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "16. What's Hiding Amongst the Crowd? - https://edabit.com/challenge/rvsvGvqZ3BzNieKqA"
+  );
+  {
+    function detectWord(str) {
+      //i have a string and I want add all lowercase letters
+      let result = "";
+      for (let i = 0; i < str.length; i++) {
+        console.log(str.length);
+        // if (str[i] >= "a" && str[i] <= "z") { <--- also works
+        if (str[i] === str[i].toLowerCase()) {
+          result += str[i];
+        }
+      }
+      return result;
+    }
+
+    Test.assertEquals(detectWord("cGaHt"), "cat");
+    Test.assertEquals(detectWord("UcUNFYGaFYFYGtNUH"), "cat");
+    Test.assertEquals(detectWord("bEEFGBuFBRrHgUHlNFYaYr"), "burglar");
+    Test.assertEquals(
+      detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment"),
+      "embezzlement"
+    );
+    Test.assertEquals(
+      detectWord(
+        "cLXSNVVJVOJBIQRVKIZWKJOIVHXELVReLXSNVVJVOJBIQRVKIZWKJOIVHXELVRrLXSNVVJVOJBIQRVKIZWKJOIVHXELVRtLXSNVVJVOJBIQRVKIZWKJOIVHXELVRaLXSNVVJVOJBIQRVKIZWKJOIVHXELVRiLXSNVVJVOJBIQRVKIZWKJOIVHXELVRn"
+      ),
+      "certain"
+    );
+    Test.assertEquals(detectWord("cUEOYCSUXVOaUEOYCSUXVOt"), "cat");
+    Test.assertEquals(
+      detectWord(
+        "vJAQSZNYRQTFUHDHSDMBDPUNFQJXSXeJAQSZNYRQTFUHDHSDMBDPUNFQJXSXgJAQSZNYRQTFUHDHSDMBDPUNFQJXSXeJAQSZNYRQTFUHDHSDMBDPUNFQJXSXtJAQSZNYRQTFUHDHSDMBDPUNFQJXSXaJAQSZNYRQTFUHDHSDMBDPUNFQJXSXbJAQSZNYRQTFUHDHSDMBDPUNFQJXSXlJAQSZNYRQTFUHDHSDMBDPUNFQJXSXe"
+      ),
+      "vegetable"
+    );
+    Test.assertEquals(
+      detectWord(
+        "dATIQTJLBZFHSRXWOZQMOKZPANOUGMeATIQTJLBZFHSRXWOZQMOKZPANOUGMlATIQTJLBZFHSRXWOZQMOKZPANOUGMiATIQTJLBZFHSRXWOZQMOKZPANOUGMgATIQTJLBZFHSRXWOZQMOKZPANOUGMhATIQTJLBZFHSRXWOZQMOKZPANOUGMt"
+      ),
+      "delight"
+    );
+    Test.assertEquals(
+      detectWord(
+        "pUBOKJGODIJBSXPMTODCGHATrUBOKJGODIJBSXPMTODCGHATiUBOKJGODIJBSXPMTODCGHATcUBOKJGODIJBSXPMTODCGHATeUBOKJGODIJBSXPMTODCGHATy"
+      ),
+      "pricey"
+    );
+    Test.assertEquals(
+      detectWord(
+        "sWRRKMVJVHHZTKAQTJUQDPKHSHPOYCnWRRKMVJVHHZTKAQTJUQDPKHSHPOYCaWRRKMVJVHHZTKAQTJUQDPKHSHPOYCkWRRKMVJVHHZTKAQTJUQDPKHSHPOYCe"
+      ),
+      "snake"
+    );
+    Test.assertEquals(
+      detectWord(
+        "aJULRJHMOVLEFVJZnJULRJHMOVLEFVJZgJULRJHMOVLEFVJZlJULRJHMOVLEFVJZe"
+      ),
+      "angle"
+    );
+  }
+  console.groupEnd();
+
+  console.groupCollapsed(
+    "17. Hex to Binary - https://edabit.com/challenge/mHrFjP4K5BfAKEugN"
+  );
+  {
+    function toBinary(hexNumber) {
+      const result = hexNumber >>> 0;
+      return result;
+    }
+
+    Test.assertEquals(toBinary(0xff), "11111111");
+    Test.assertEquals(toBinary(0xaa), "10101010");
+    Test.assertEquals(toBinary(0xfa), "11111010");
+  }
+  console.groupEnd();
 }
 console.groupEnd();
