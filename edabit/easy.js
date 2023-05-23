@@ -516,5 +516,41 @@ console.groupCollapsed("EASY");
     Test.assertEquals(toBinary(0xfa), "11111010");
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "18. Older Than Me - https://edabit.com/challenge/iwdZiFucR5wkQsFHu"
+  );
+  {
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      compareAge(other) {
+        if (this.age < other.age) {
+          return `${other.name} is older than me.`;
+        } else if (this.age > other.age) {
+          return `${other.name} is younger than me.`;
+        } else {
+          return `${other.name} is the same age as me.`;
+        }
+      }
+    }
+
+    p1 = new Person("Samuel", 24);
+    p2 = new Person("Joel", 36);
+    p3 = new Person("Lily", 24);
+
+    Test.assertEquals(p1.compareAge(p2), "Joel is older than me.");
+    Test.assertEquals(p1.compareAge(p3), "Lily is the same age as me.");
+
+    Test.assertEquals(p2.compareAge(p1), "Samuel is younger than me.");
+    Test.assertEquals(p2.compareAge(p3), "Lily is younger than me.");
+
+    Test.assertEquals(p3.compareAge(p1), "Samuel is the same age as me.");
+    Test.assertEquals(p3.compareAge(p2), "Joel is older than me.");
+  }
+  console.groupEnd();
 }
 console.groupEnd();
