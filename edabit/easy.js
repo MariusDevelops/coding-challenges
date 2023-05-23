@@ -552,5 +552,44 @@ console.groupCollapsed("EASY");
     Test.assertEquals(p3.compareAge(p2), "Joel is older than me.");
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "19. Drink Sorting - https://edabit.com/challenge/nuXdWHAoHv9y38sn7"
+  );
+  {
+    function sortDrinkByPrice(drinks) {
+      drinks.sort((a, b) => a.price - b.price);
+      console.log(drinks);
+      return drinks;
+    }
+
+    const drinks1 = [
+      { name: "lemonade", price: 90 },
+      { name: "lime", price: 432 },
+      { name: "peach", price: 23 },
+    ];
+
+    const sorted1 = [
+      { name: "peach", price: 23 },
+      { name: "lemonade", price: 90 },
+      { name: "lime", price: 432 },
+    ];
+
+    const drinks2 = [
+      { name: "water", price: 120 },
+      { name: "lime", price: 80 },
+      { name: "peach", price: 90 },
+    ];
+
+    const sorted2 = [
+      { name: "lime", price: 80 },
+      { name: "peach", price: 90 },
+      { name: "water", price: 120 },
+    ];
+
+    Test.assertEquals(sortDrinkByPrice(drinks1), sorted1);
+    Test.assertEquals(sortDrinkByPrice(drinks2), sorted2);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
