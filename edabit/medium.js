@@ -259,5 +259,23 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(possibleBonus(5, 3), false);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "5. Right Shift by Division - https://edabit.com/challenge/ALGbgMWLuEdrh22fB"
+  );
+  {
+    function shiftToRight(x, y) {
+      const result = Math.floor(x / 2 ** y);
+      return result;
+    }
+
+    Test.assertEquals(shiftToRight(80, 3), 10);
+    Test.assertEquals(shiftToRight(-24, 2), -6);
+    Test.assertEquals(shiftToRight(-5, 1), -3);
+    Test.assertEquals(shiftToRight(4666, 6), 72);
+    Test.assertEquals(shiftToRight(3777, 6), 59);
+    Test.assertEquals(shiftToRight(-512, 10), -1);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
