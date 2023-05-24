@@ -232,5 +232,32 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(testExp(str), true);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "4. Tile Teamwork Tactics - https://edabit.com/challenge/NHfYRHg2tDtcZyykB"
+  );
+  {
+    function possibleBonus(a, b) {
+      if (b - a <= 6 && b - a >= 0 && a !== b) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    Test.assertEquals(possibleBonus(3, 7), true);
+    Test.assertEquals(possibleBonus(0, 6), true);
+    Test.assertEquals(possibleBonus(1, 6), true);
+    Test.assertEquals(possibleBonus(2, 6), true);
+    Test.assertEquals(possibleBonus(3, 6), true);
+    Test.assertEquals(possibleBonus(4, 6), true);
+    Test.assertEquals(possibleBonus(5, 6), true);
+    Test.assertEquals(possibleBonus(6, 6), false);
+    Test.assertEquals(possibleBonus(7, 6), false);
+    Test.assertEquals(possibleBonus(23, 27), true);
+    Test.assertEquals(possibleBonus(1, 9), false);
+    Test.assertEquals(possibleBonus(5, 3), false);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
