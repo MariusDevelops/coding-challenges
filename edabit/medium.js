@@ -298,5 +298,48 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(perimeter("c", 30), 188.4);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "7. Find Number of Digits in Number - https://edabit.com/challenge/yFJzLfYghz7ZtsyAN"
+  );
+  {
+    // works
+    // function num_of_digits(num) {
+    //   const result =
+    //     num >= 0 ? num.toString().length : num.toString().length - 1;
+    //   return result;
+    // }
+
+    // without string
+    function num_of_digits(num) {
+      let count = 0;
+      let absoluteNumber = Math.abs(num); // Get the absolute value of the number
+      console.log(absoluteNumber);
+
+      if (absoluteNumber === 0) {
+        return 1; // Special case for 0, which has one digit
+      }
+
+      while (absoluteNumber >= 1) {
+        count++;
+        absoluteNumber /= 10;
+        absoluteNumber = Math.floor(absoluteNumber);
+      }
+
+      return count;
+    }
+
+    Test.assertEquals(num_of_digits(13124), 5);
+    Test.assertEquals(num_of_digits(0), 1);
+    Test.assertEquals(num_of_digits(-12381428), 8);
+    Test.assertEquals(num_of_digits(12), 2);
+    Test.assertEquals(num_of_digits(42), 2);
+    Test.assertEquals(num_of_digits(1000), 4);
+    Test.assertEquals(num_of_digits(136), 3);
+    Test.assertEquals(num_of_digits(1000000000), 10);
+    Test.assertEquals(num_of_digits(2147483647), 10);
+    Test.assertEquals(num_of_digits(-2147483647), 10);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
