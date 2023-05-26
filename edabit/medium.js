@@ -341,5 +341,30 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(num_of_digits(-2147483647), 10);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "8. Burglary Series (04): Add its Name - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau"
+  );
+  {
+    function addName(obj, name, value) {
+      let obj2 = {};
+      obj2[name] = value;
+      const result = Object.assign(obj, obj2);
+      console.log(result);
+      return result;
+    }
+
+    Test.assertEquals(addName({}, "Brutus", 300), { Brutus: 300 });
+    Test.assertEquals(addName({ piano: 500 }, "Brutus", 400), {
+      piano: 500,
+      Brutus: 400,
+    });
+    Test.assertEquals(addName({ piano: 500, stereo: 300 }, "Caligula", 440), {
+      piano: 500,
+      stereo: 300,
+      Caligula: 440,
+    });
+  }
+  console.groupEnd();
 }
 console.groupEnd();
