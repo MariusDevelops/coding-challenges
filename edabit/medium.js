@@ -366,5 +366,22 @@ console.groupCollapsed("MEDIUM");
     });
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "9. Derivative of a Function - https://edabit.com/challenge/Bxp6uGjgmf8TuG8Fe"
+  );
+  {
+    function derivative(b, m) {
+      return b * Math.pow(m, b - 1);
+    }
+
+    Test.assertEquals(derivative(1, 4), 1);
+    Test.assertEquals(derivative(3, -2), 12);
+    Test.assertEquals(derivative(4, -3), -108);
+    Test.assertEquals(derivative(9, -5), 3515625);
+    Test.assertEquals(derivative(1254, 0), 0);
+    Test.assertEquals(derivative(-2, 10), -0.002);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
