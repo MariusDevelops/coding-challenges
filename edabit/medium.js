@@ -383,5 +383,54 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(derivative(-2, 10), -0.002);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "10. Which Generation Are You? - https://edabit.com/challenge/48EJWLhF224na8po3"
+  );
+  {
+    function generation(x, y) {
+      const generations = {
+        "-3": { m: "great grandfather", f: "great grandmother" },
+        "-2": { m: "grandfather", f: "grandmother" },
+        "-1": { m: "father", f: "mother" },
+        0: { m: "me!", f: "me!" },
+        1: { m: "son", f: "daughter" },
+        2: { m: "grandson", f: "granddaughter" },
+        3: { m: "great grandson", f: "great granddaughter" },
+      };
+
+      if (x === 0) {
+        return "me!";
+      }
+
+      if (generations[x] && generations[x][y]) {
+        return generations[x][y];
+      }
+
+      return "unknown";
+    }
+
+    Test.assertEquals(
+      generation(-3, "m"),
+      "great grandfather",
+      "3 generations before you, male..."
+    );
+    Test.assertEquals(
+      generation(1, "f"),
+      "daughter",
+      "1 generation after you, female..."
+    );
+    Test.assertEquals(generation(-3, "f"), "great grandmother");
+    Test.assertEquals(generation(-2, "m"), "grandfather");
+    Test.assertEquals(generation(-2, "f"), "grandmother");
+    Test.assertEquals(generation(-1, "m"), "father");
+    Test.assertEquals(generation(-1, "f"), "mother");
+    Test.assertEquals(generation(0, "f"), "me!");
+    Test.assertEquals(generation(1, "m"), "son");
+    Test.assertEquals(generation(1, "f"), "daughter");
+    Test.assertEquals(generation(2, "m"), "grandson");
+    Test.assertEquals(generation(2, "g"), "unknown");
+  }
+  console.groupEnd();
 }
 console.groupEnd();
