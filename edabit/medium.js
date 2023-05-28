@@ -432,5 +432,23 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(generation(2, "g"), "unknown");
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "11. Find the nth Tetrahedral Number - https://edabit.com/challenge/zRCyxKBBmr4F2x4Bv"
+  );
+  {
+    // n is the hight of Tetrahedral
+    function tetra(n) {
+      return (n * (n + 1) * (n + 2)) / 6;
+    }
+
+    Test.assertEquals(tetra(1), 1);
+    Test.assertEquals(tetra(2), 4);
+    Test.assertEquals(tetra(3), 10);
+    Test.assertEquals(tetra(4), 20);
+    Test.assertEquals(tetra(5), 35);
+    Test.assertEquals(tetra(9), 165);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
