@@ -450,5 +450,47 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(tetra(9), 165);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "12. Learn Lodash (2): Compact - https://edabit.com/challenge/M6fbYyBkzJXMAu39G"
+  );
+  {
+    function compact(arr) {
+      const result = arr.filter(Boolean);
+      return result;
+    }
+
+    Test.assertEquals(compact([1, 0, false, null, undefined, "banana"]), [
+      1,
+      "banana",
+    ]);
+    Test.assertEquals(compact([]), []);
+    Test.assertEquals(
+      compact(
+        [
+          {
+            color: "red",
+            make: "toyota",
+          },
+          {
+            color: "blue",
+            make: "mazda",
+          },
+        ],
+        null
+      ),
+      [
+        {
+          color: "red",
+          make: "toyota",
+        },
+        {
+          color: "blue",
+          make: "mazda",
+        },
+      ]
+    );
+  }
+  console.groupEnd();
 }
 console.groupEnd();
