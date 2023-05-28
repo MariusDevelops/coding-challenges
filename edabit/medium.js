@@ -529,5 +529,30 @@ console.groupCollapsed("MEDIUM");
     Test.assertEquals(makePlusFunction(0)(0), 0);
   }
   console.groupEnd();
+
+  console.groupCollapsed(
+    "14. Converting Objects to Arrays - https://edabit.com/challenge/pPNAs5PvB3WvnDwDM"
+  );
+  {
+    function toArray(obj) {
+      return Object.entries(obj);
+    }
+
+    Test.assertEquals(toArray({ a: 1, b: 2 }), [
+      ["a", 1],
+      ["b", 2],
+    ]);
+    Test.assertEquals(toArray({ foo: 33, bar: 45, baz: 67 }), [
+      ["foo", 33],
+      ["bar", 45],
+      ["baz", 67],
+    ]);
+    Test.assertEquals(toArray({ shrimp: 15, tots: 12 }), [
+      ["shrimp", 15],
+      ["tots", 12],
+    ]);
+    Test.assertEquals(toArray({}), []);
+  }
+  console.groupEnd();
 }
 console.groupEnd();
